@@ -1,0 +1,54 @@
+
+
+    /* CSS for the form */
+    .bmrform {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    /* CSS for the labels */
+    .bmrform label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    /* CSS for the input fields */
+    .bmrform input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+
+    /* CSS for the button */
+    .bmrform button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .bmrform button:hover {
+      background-color: #111;
+    }
+
+    /* CSS for the result paragraph */
+    #bmrResult {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }

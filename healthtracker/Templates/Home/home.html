@@ -1,0 +1,48 @@
+{% extends "../Home/nav.html" %}
+
+
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% if request.user.is_authenticated %}
+<div class="container">
+    <div class="row justify-content-center">
+        {% for food in foods %}
+        <div class="col-8">
+            <div class="food-item">
+                <h2>{{food.name}}</h2>
+                <p>Description:{{food.description}}</p>
+                <p><span class="label">Protein:</span> <span class="protein">{{food.protein}}g</span></p>
+                <p><span class="label">Fat:</span> <span class="fat">{{food.fat}}g</span></p>
+                <p><span class="label">Carbs:</span> <span class="carbs">{{food.carbs}}g</span></p>
+                <p><span class="label">Calorie:</span> <span class="calorie">{{food.calorie}}Kcal</span></p>
+                <input type="checkbox" />
+            </div>
+        </div>
+        {% endfor %}
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <button type="button" class="btn btn-info">Calculate calories</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% else %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'images/food.jpg' %}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images/c2.jpg' %}" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images/c3.jpg' %}" alt="Third slide">
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

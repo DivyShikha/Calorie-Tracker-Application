@@ -1,0 +1,36 @@
+{% extends "../Home/nav.html" %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bmr.css' %}">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 ">
+            <h1>Calculate Your BMR</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <div class="bmrform">
+                <label for="">Age</label>
+                <input id="bmrAge" type="number" name="age" class="form-control" placeholder="in year">
+                <label for="">Height</label>
+                <input id="bmrHeight" type="number" name="height" class="form-control" placeholder="in centimeter">
+                <label for="">Weight</label>
+                <input id="bmrWeight" type="number" name="weight" class="form-control" placeholder="in Kg">
+                <label for="">Gender :</label>
+                <br>
+                <label for="">Male</label>
+                <input  value="1" type="radio" name="gender" class="form-check-input">
+                <br>
+                <label for="">Female</label>
+                <input  type="radio" value="2" name="gender" class="form-check-input">
+                <br>
+                <button onclick="calculateBmr(event)" type="button" class="btn btn-primary">Calculate BMR</button>
+                <p id="bmrResult"> </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

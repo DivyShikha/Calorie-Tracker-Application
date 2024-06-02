@@ -1,0 +1,44 @@
+
+{% extends "../Home/nav.html" %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bmr.css' %}">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 ">
+            <h1>Calculate TDEE</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <div class="bmrform">
+                <label for="">Age</label>
+                <input id="bmrAge" type="number" name="age" class="form-control" placeholder="in year">
+                <label for="">Height</label>
+                <input id="bmrHeight" type="number" name="height" class="form-control" placeholder="in centimeter">
+                <label for="">Weight</label>
+                <input id="bmrWeight" type="number" name="weight" class="form-control" placeholder="in Kg">
+                <label for="">Gender :</label>
+                <br>
+                <label for="">Male</label>
+                <input  value="1" type="radio" name="gender" class="form-check-input">
+                <br>
+                <label for="">Female</label>
+                <input  type="radio" value="2" name="gender" class="form-check-input">
+                <br>
+                <select id="selecttype" class="form-select">
+                    <option value="1.2">Sedentary (little or no exercise)</option>
+                    <option value="1.375">Lightly active (exercise 1 to 3 days a week)</option>
+                    <option value="1.55">Moderately active (exercise 3 to 5 days a week)</option>
+                    <option value="1.725">Active (exercise 6 to 7 days a week)</option>
+                    <option value="1.9">Very active (hard exercise 6 to 7 days a week)</option>
+                </select>
+                <button onclick="calculateTdee(event)" type="button" class="btn btn-primary">Calculate TDEE</button>
+                <p id="bmrResult"> </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

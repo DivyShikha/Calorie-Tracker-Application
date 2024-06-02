@@ -1,0 +1,37 @@
+{% extends "../Home/nav.html" %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/track.css' %}">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <table>
+
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fat (g)</th>
+            <th>Calories</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for val in value %}
+          <tr>
+            <td>{{val.date}}</td>
+            <td>{{val.protein}}</td>
+            <td>{{val.carbs}}</td>
+            <td>{{val.fat}}</td>
+            <td>{{val.calorie}}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
